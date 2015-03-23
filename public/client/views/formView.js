@@ -15,7 +15,7 @@ Marginalio.FormView = Backbone.View.extend({
       return ;
     }
     this.collection.create({
-      username: mockLoggedInUser,
+      username: sessionStorage.username,
       text: converter.makeHtml( $text.val() )
     });
     $text.val('');
