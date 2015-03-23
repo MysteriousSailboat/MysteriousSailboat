@@ -30,9 +30,12 @@ app.post('/addDoc', util.checkUser, handler.readabilityRequest);
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
 
+// logout user
+app.get('/logout', handler.logoutUser);
+
 // saving documents
 app.get('/documents', util.checkUser, handler.fetchDocs);
-app.post('/documents', handler.saveDoc);
+app.post('/documents', util.checkUser, handler.saveDoc);
 
 // signup page routing
 app.get('/signup', handler.signupUserForm);
