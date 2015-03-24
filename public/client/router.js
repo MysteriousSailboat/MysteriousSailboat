@@ -8,7 +8,7 @@ Marginalio.Router = Backbone.Router.extend({
   routes: {
     '':    'index',
     'add': 'add',
-    'document': 'document'
+    // 'document': 'document'
   },
 
   swapView: function(view){
@@ -23,18 +23,22 @@ Marginalio.Router = Backbone.Router.extend({
 
     documents.on('focus', function(doc){
       this.focalDoc = doc;
-      this.navigate('/document', { trigger: true });
+      window.converter = Markdown.getSanitizingConverter();
+      var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs'), 'doc': this.focalDoc });
+      this.swapView(view);
+
+      // this.navigate('/document', { trigger: true });
     }, this);
   },
 
   add: function(){
     this.swapView(new Marginalio.addDocumentView());
-  },
-  document: function() {
+  }
+  // document: function() {
 
-    window.mockLoggedInUser = "Fred";
-    window.converter = Markdown.getSanitizingConverter();
-    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs'), 'doc': this.focalDoc });
-    this.swapView(view);
-  },
+  //   window.mockLoggedInUser = "Fred";
+  //   window.converter = Markdown.getSanitizingConverter();
+  //   var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs'), 'doc': this.focalDoc });
+  //   this.swapView(view);
+  // },
 });
