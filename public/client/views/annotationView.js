@@ -4,7 +4,7 @@ Marginalio.AnnotationView = Backbone.View.extend({
                         <div class="annotation-body"><%= text %></div>'),
   render: function(){
     var attrs = this.model.toJSON();
-    if (attrs.username === mockLoggedInUser) 
+    if (attrs.username === sessionStorage.username) 
       attrs.username = 'you';
     this.$el.html(this.template(attrs));
     return this;
