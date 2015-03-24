@@ -35,8 +35,9 @@ app.get('/logout', handler.logoutUser);
 // saving documents
 app.get('/documents', util.checkUser, handler.fetchDocs);
 
-app.post('/documents', handler.saveDoc);
-app.delete('/documents/:id', handler.deleteDocument);
+app.post('/documents', util.checkUser, handler.saveDoc);
+app.delete('/documents/:id', util.checkUser, handler.deleteDocument);
+app.put('/documents/:id', util.checkUser, handler.putDoc);
 
 // signup page routing
 app.get('/signup', handler.signupUserForm);

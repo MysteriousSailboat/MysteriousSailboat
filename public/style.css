@@ -89,7 +89,7 @@ form input[type=text], form input[type=password] {
 
 /* document view */
 
-.document .info, .document .title, .document .domain {
+.document .info, .document .title, .document .domain, #deleteButton, .button {
   display: inline-block;
   margin: 5px;
 
