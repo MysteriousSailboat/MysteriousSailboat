@@ -105,16 +105,21 @@ form input[type=text], form input[type=password] {
 
 body {
   margin: 5%;
-  font-family: Garamond, serif;
+  font-family: "Lato", Arial, sans-serif;
   font-size:20px;
   line-height:1.5em;
 }
+
+/*body {
+  font-family: "Lato", Garamond, serif;
+}*/
+
 em {
   font-style: italic;
 }
 
 h1, h2 {
-  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  /*font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/
   margin-bottom: 1em;
   margin-top: 1em;
 }
